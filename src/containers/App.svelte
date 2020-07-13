@@ -4,13 +4,65 @@
   import TimeLine from "../components/TimeLine.svelte";
   import Sidebar from "../components/Sidebar.svelte";
   import Footer from "../components/Footer.svelte";
-  import { isDarkModeActive } from "../store/store.js";
+  import { isDarkMode } from "../store/store.js";
+  import { onMount } from "svelte";
 
-  isDarkModeActive.subscribe(value => {
+  onMount(async () => {
+    const response = await fetch(API);
+    data = await response.json();
+  });
+
+  isDarkMode.subscribe(value => {
     value
       ? document.body.classList.add("dark")
       : document.body.classList.remove("dark");
   });
+
+  const nickname = "mappedev";
+  const name = "Mario Peña";
+  const apiKey = "17424680-9eb974e9e782feadc756e8885";
+  const API = `https://pixabay.com/api/?key=${apiKey}&q=developer+programming+web&image_type=photo`;
+  let data = {};
+
+  const locations = [
+    "Caracas, Venezuela",
+    "Bogota, Colombia",
+    "Quito, Ecuador",
+    "Santiago, Chile",
+    "Madrid, España",
+    "Buenos Aires, Argentina",
+    "Lima, Perú",
+    "Ciudad de México, México"
+  ];
+
+  const descriptions = [
+    "Se los comparto.",
+    "Me gustaría hacer un live coding contigo, ¿que opinas?",
+    "Únete a nuestra red de programadores.",
+    "No les mentiré, costo trabajo pero valio la pena.",
+    "¡Me siento orgulloso!",
+    "¿Que les parece?",
+    "¿Alguna sugerencia compañeros?",
+    "Espero les guste."
+  ];
+
+  const comments = [
+    "¡Guao que genial!",
+    "Excelente post.",
+    "Está increible.",
+    "Tremendo.",
+    "Me gusta.",
+    "Pff otro level.",
+    "Men, doname tus neuronas jajaja.",
+    "¡Cuanto potencial!",
+    "Es bellisimo...",
+    "Tiene potencial tiene po-ten-cial.",
+    "¡¡¡OM... Está bestial!!!",
+    "Escribeme please.",
+    "Se mi mentoooor.",
+    "Enseñameeeee.",
+    "¡Felicidades!"
+  ];
 </script>
 
 <style>
@@ -41,7 +93,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: .3s ease;
+    transition: 0.3s ease;
   }
 
   :global(body.dark) {
@@ -78,6 +130,6 @@
 
 <Header />
 <Main>
-  <TimeLine />
-  <Sidebar />
+  <TimeLine posts={data.hits} {locations} {descriptions} {comments} />
+  <Sidebar {nickname} {name} />
 </Main>

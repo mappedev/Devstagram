@@ -1,5 +1,6 @@
 <script>
-  import { isDarkModeActive } from "../store/store.js";
+  import { isDarkMode } from "../store/store.js";
+  import { likeCount } from "../store/store.js";
 </script>
 
 <style>
@@ -66,7 +67,7 @@
   }
 </style>
 
-<header class="header" class:header-dark={$isDarkModeActive}>
+<header class="header" class:header-dark={$isDarkMode}>
   <div class="header__container">
     <div class="header__content">
       <div class="logo">
@@ -80,6 +81,9 @@
           <li class="menu__item">
             <a href="/#" class="menu__link">
               <i class="fas fa-heart menu__icon" />
+              {#if $likeCount > 0}
+                <span class="menu__likes">{$likeCount}</span>
+              {/if}
             </a>
           </li>
           <li class="menu__item">

@@ -1,5 +1,5 @@
 <script>
-  import { isDarkModeActive } from "../store/store.js";
+  import { isDarkMode } from "../store/store.js";
 </script>
 
 <style>
@@ -88,9 +88,9 @@
   }
 </style>
 
-<div class="stories" class:stories-dark={$isDarkModeActive}>
+<div class="stories" class:stories-dark={$isDarkMode}>
   <div class="stories__header">
-    <h2 class="stories__title" class:stories-title-dark={$isDarkModeActive}>
+    <h2 class="stories__title" class:stories-title-dark={$isDarkMode}>
       Historias recientes
     </h2>
     <a href="/#" class="stories__link-more">
@@ -116,7 +116,7 @@
           </a>
           <span
             class="stories__time"
-            class:stories-time-dark={$isDarkModeActive}>
+            class:stories-time-dark={$isDarkMode}>
             hace 24 minutos
           </span>
         </div>
@@ -142,7 +142,7 @@
           </a>
           <span
             class="stories__time"
-            class:stories-time-dark={$isDarkModeActive}>
+            class:stories-time-dark={$isDarkMode}>
             hace 46 minutos
           </span>
         </div>
@@ -168,7 +168,7 @@
           </a>
           <span
             class="stories__time"
-            class:stories-time-dark={$isDarkModeActive}>
+            class:stories-time-dark={$isDarkMode}>
             hace 1 horas y 7 minutos
           </span>
         </div>

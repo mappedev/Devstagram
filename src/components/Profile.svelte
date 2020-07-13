@@ -1,7 +1,10 @@
 <script>
-  import { isDarkModeActive } from "../store/store.js";
+  import { isDarkMode } from "../store/store.js";
 
-  const changeMode = () => ($isDarkModeActive = !$isDarkModeActive);
+  export let nickname;
+  export let name;
+
+  const changeMode = () => ($isDarkMode = !$isDarkMode);
 </script>
 
 <style>
@@ -40,7 +43,7 @@
   }
 
   .profile__switch {
-    background: linear-gradient(to right, #12cad6, #5c2a9d);
+    background: linear-gradient(to right, #4ee8f3, #270e47);
     border-radius: 100px;
     border: none;
     position: relative;
@@ -55,7 +58,7 @@
     width: 30px;
     height: 30px;
     border-radius: 100px;
-    background-color: #f1f1f1;
+    background-color: var(--white-color);
     position: absolute;
     left: 0;
     box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
@@ -86,14 +89,14 @@
     </div>
     <div class="profile__info">
       <a href="/#" class="profile__link-username">
-        <h2 class="profile__username">mappedev</h2>
+        <h2 class="profile__username">{nickname}</h2>
       </a>
-      <span class="profile__name">Mario Peña</span>
+      <span class="profile__name">{name}</span>
     </div>
   </div>
   <button
     class="profile__switch"
-    class:active={$isDarkModeActive}
+    class:active={$isDarkMode}
     on:click={changeMode}>
     <i class="fas fa-sun profile__icon" />
     <i class="fas fa-moon profile__icon" />

@@ -1,5 +1,8 @@
 <script>
-  import { isDarkModeActive } from "../store/store.js";
+  import { isDarkMode } from "../store/store.js";
+
+  export let user;
+  export let comments;
 
   const validateCamp = target => {
     if (target.value.length === 0 || /^\s+$/.test(target.value)) {
@@ -19,23 +22,44 @@
     resize(target);
   };
 
-  const validateInput = el => {
-    el.addEventListener("input", inputFunctions);
+  const addComment = event => {
+    const msg = event.target.text.value;
+
+    newComments = [...newComments, msg];
+
+    // Reset:
+    event.target.text.value = "";   
+    inputIsValid = false;
+    resize(textarea);
   };
 
   let inputIsValid = null;
+  let userInverted = "";
+  let x = user.length;
+  let textarea;
+  let comment = [comments[Math.floor(Math.random() * comments.length)]];
+  let newComments = [];
+
+  while (x >= 0) {
+    userInverted += user.charAt(x);
+    x--;
+  }
 </script>
 
 <style>
-  .comments__friends {
-    display: flex;
-    align-items: center;
+  .comments__container {
+    /* display: flex;
+    align-items: center; */
     padding: 16px 16px 8px;
     border-bottom: 1px solid #dddddd;
   }
 
-  .comments-friends-dark {
+  .comments-container-dark {
     border-bottom: 1px solid #404040;
+  }
+
+  .comment__content {
+    display: flex;
   }
 
   .comments__username {
@@ -89,9 +113,10 @@
   .comments__submit:active {
     color: var(--blue-alpha-80);
   }
-  
+
   .input-valid {
     color: var(--blue-color);
+    cursor: pointer;
   }
 
   .input-invalid {
@@ -100,23 +125,42 @@
 </style>
 
 <div class="comments">
-  <div class="comments__friends" class:comments-friends-dark={$isDarkModeActive}>
-    <a href="/#" class="card__link">
-      <h2 class="comments__username">rosa_cod3</h2>
-    </a>
-    <span class="comments__comment" class:comments-comment-dark={$isDarkModeActive}>Tremendo framework.</span>
+  <div
+    class="comments__container"
+    class:comments-container-dark={$isDarkMode}>
+    <div class="comment__content">
+      <a href="/#" class="card__link">
+        <h2 class="comments__username">{userInverted}:</h2>
+      </a>
+      <span
+        class="comments__comment"
+        class:comments-comment-dark={$isDarkMode}>
+        {comment}
+      </span>
+    </div>
+    {#each newComments as comment}
+      <div class="comment__content">
+        <a href="/#" class="card__link">
+          <h2 class="comments__username">mappedev:</h2>
+        </a>
+        <span
+          class="comments__comment"
+          class:comments-comment-dark={$isDarkMode}>
+          {comment}
+        </span>
+      </div>
+    {/each}
   </div>
 
-  <form class="comments__add">
-    <!-- Usaremos "use:validateInput" para hacer resize del campo y activar el botón cuando haya algún dato. -->
-    <!-- En caso de hacer una sola acción en el campo, pudimos haber usado on:input={function} y directamente la acción a tomar. -->
+  <form class="comments__add" on:submit|preventDefault={addComment}>
     <textarea
       type="text"
       placeholder="Agrega un comentario..."
       class="comments__input"
       id="text"
-      use:validateInput 
-      class:comments-input-dark={$isDarkModeActive} />
+      on:input|preventDefault={inputFunctions}
+      bind:this={textarea}
+      class:comments-input-dark={$isDarkMode} />
     <button
       type="submit"
       class="comments__submit"
