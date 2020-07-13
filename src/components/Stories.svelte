@@ -1,5 +1,7 @@
 <script>
   import { isDarkMode } from "../store/store.js";
+
+  let isFavorite = false;
 </script>
 
 <style>
@@ -43,7 +45,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-bottom: 5px; 
+    padding-bottom: 5px;
   }
 
   .stories__data-user {
@@ -86,6 +88,10 @@
   .stories__icon-favorites {
     cursor: pointer;
   }
+
+  .stories__icon-favorites.active {
+    color: orange;
+  }
 </style>
 
 <div class="stories" class:stories-dark={$isDarkMode}>
@@ -114,67 +120,16 @@
           <a href="/#" class="stories__link-username">
             <h2 class="stories__username">susana7dev7</h2>
           </a>
-          <span
-            class="stories__time"
-            class:stories-time-dark={$isDarkMode}>
+          <span class="stories__time" class:stories-time-dark={$isDarkMode}>
             hace 24 minutos
           </span>
         </div>
       </div>
       <div class="stories__favorite">
-        <i class="fas fa-star stories__icon-favorites" />
-      </div>
-    </div>
-
-    <div class="stories__item">
-      <div class="stories__data-user">
-        <div class="stories__avatar">
-          <a href="/#" class="stories__link-user">
-            <img
-              src="./src/images/profile-user-man.jpg"
-              alt="perfil"
-              class="stories__img" />
-          </a>
-        </div>
-        <div class="stories__user-info">
-          <a href="/#" class="stories__link-username">
-            <h2 class="stories__username">vitogeeko</h2>
-          </a>
-          <span
-            class="stories__time"
-            class:stories-time-dark={$isDarkMode}>
-            hace 46 minutos
-          </span>
-        </div>
-      </div>
-      <div class="stories__favorite">
-        <i class="fas fa-star stories__icon-favorites" />
-      </div>
-    </div>
-
-    <div class="stories__item">
-      <div class="stories__data-user">
-        <div class="stories__avatar">
-          <a href="/#" class="stories__link-user">
-            <img
-              src="./src/images/profile-user-woman.jpeg"
-              alt="perfil"
-              class="stories__img" />
-          </a>
-        </div>
-        <div class="stories__user-info">
-          <a href="/#" class="stories__link-username">
-            <h2 class="stories__username">rosa_cod3</h2>
-          </a>
-          <span
-            class="stories__time"
-            class:stories-time-dark={$isDarkMode}>
-            hace 1 horas y 7 minutos
-          </span>
-        </div>
-      </div>
-      <div class="stories__favorite">
-        <i class="fas fa-star stories__icon-favorites" />
+        <i
+          class="fas fa-star stories__icon-favorites"
+          class:active={isFavorite}
+          on:click={() => (isFavorite = !isFavorite)} />
       </div>
     </div>
   </div>
