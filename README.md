@@ -6,6 +6,7 @@ Devstagram, Instagram home made with Svelte. This application was made for the p
 - [Webpack](https://webpack.js.org/)
 - [Babel](https://babeljs.io/)
 - [Pixabay API](https://pixabay.com/api/docs/)
+- [Netlify](https://www.netlify.com/)
 
 ## To use
 To install Devstagram locally:
