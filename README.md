@@ -1,5 +1,5 @@
 # Devstagram
-Devstagram, Instagram home made with Svelte. This application was made for the purpose of practicing the Svelte course of Platzi.
+Devstagram, Instagram Home responsive made with Svelte. This application was made for the purpose of practicing the Svelte course of Platzi.
 
 ## Resources used
 - [Svelte](https://svelte.dev/)

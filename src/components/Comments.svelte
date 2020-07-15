@@ -48,8 +48,6 @@
 
 <style>
   .comments__container {
-    /* display: flex;
-    align-items: center; */
     padding: 16px 16px 8px;
     border-bottom: 1px solid #dddddd;
   }

@@ -53,10 +53,9 @@
   }
 
   .stories__avatar {
-    /* width: 33px;
-    height: 33px; */
     border-radius: 50%;
-    border: 2px solid deeppink;
+    border: 2px solid rgb(20, 161, 255);
+    background-color: var(--white-color);
   }
 
   .stories__img {
@@ -64,6 +63,7 @@
     height: 32px;
     border-radius: 50%;
     border: 1px solid var(--white-color);
+    outline: none;
   }
 
   .stories__user-info {
@@ -105,13 +105,12 @@
   </div>
 
   <div class="stories__items">
-    <!-- Lo normal acá es recorrer un arreglo que contenga los datos, pero por ahora lo hardcodearemos... -->
     <div class="stories__item">
       <div class="stories__data-user">
         <div class="stories__avatar">
           <a href="/#" class="stories__link-user">
             <img
-              src="./src/images/profile-user-woman.jpeg"
+              src="https://img.icons8.com/dusk/452/user-female-skin-type-1-2.png"
               alt="perfil"
               class="stories__img" />
           </a>

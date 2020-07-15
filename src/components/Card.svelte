@@ -164,7 +164,6 @@
     color: var(--white-color);
   }
 
-  /* Estilo común */
   .card__username {
     font-size: 14px;
     font-weight: bold;
@@ -239,6 +238,5 @@
   </div>
 
   <!-- Comments -->
-  <!-- Lo separamos porque tiene algo de lógica... -->
   <Comments {comments} user={usernameFooter} />
 </article>

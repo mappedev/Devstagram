@@ -129,7 +129,10 @@
 </style>
 
 <Header />
-<Main>
-  <TimeLine posts={data.hits} {locations} {descriptions} {comments} />
-  <Sidebar {nickname} {name} />
-</Main>
+<Main
+  {data}
+  {locations}
+  {descriptions}
+  {comments}
+  {nickname}
+  {name} />

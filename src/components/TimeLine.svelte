@@ -12,6 +12,7 @@
   .time-line {
     max-width: 642px;
     width: 100%;
+    grid-area: timeline;
   }
 
   .loader {
@@ -34,6 +35,12 @@
 
   .loader-dark {
     background-color: rgba(204, 204, 204, 0.6);
+  }
+
+  @media (max-width: 999px) {
+    .time-line {
+      margin: 0 auto;
+    }
   }
 </style>
 

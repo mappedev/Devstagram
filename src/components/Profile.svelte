@@ -82,7 +82,7 @@
     <div class="profile__avatar">
       <a href="/#" class="profile__link-avatar">
         <img
-          src="./src/images/profile-mariop.jpeg"
+          src="https://pbs.twimg.com/profile_images/1259184766932398080/tNoYzDpS_400x400.jpg"
           alt="perfil"
           class="profile__img" />
       </a>

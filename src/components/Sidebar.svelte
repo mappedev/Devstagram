@@ -10,6 +10,7 @@
 <style>
   .sidebar {
     position: relative;
+    grid-area: stories;
   }
 
   .sidebar__container {
@@ -19,6 +20,13 @@
     position: fixed;
     max-width: 293px;
     width: 100%;
+  }
+
+  @media (max-width: 999px) {
+    .sidebar__container {
+      position: static;
+      margin: 0 auto;
+    }
   }
 </style>
 
