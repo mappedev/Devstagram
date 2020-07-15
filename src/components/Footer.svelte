@@ -6,6 +6,13 @@
   .footer {
     padding-left: 16px;
   }
+
+  @media (max-width: 999px) {
+    .footer {
+      margin: 0 auto;
+      padding: 0;
+    }
+  }
 </style>
 
 <footer class="footer">
