@@ -57,21 +57,21 @@
   </div>
   <div class="share__content">
     <a
-      href="https://www.facebook.com/sharer.php?&t=Aprendiendo%20a%20crear%20un%20enlace%20para%20compartir%20en%20Facebook%20https://devstagram.com/&u=https://devstagtam.com"
+      href="https://www.facebook.com/sharer.php?&t=Aprendiendo%20a%20crear%20un%20enlace%20para%20compartir%20en%20Facebook%20https://devstagram.netlify.app/&u=https://devstagtam.com"
       target="_blank"
       class="share__link">
       <i class="fab fa-facebook-square share__icon-social" />
       Compartir en Facebook
     </a>
     <a
-      href="https://twitter.com/intent/tweet?text=Aprendiendo%20a%20crear%20un%20enlace%20para%20compartir%20en%20Twitter&url=devstagram.com"
+      href="https://twitter.com/intent/tweet?text=Aprendiendo%20a%20crear%20un%20enlace%20para%20compartir%20en%20Twitter&url=https://devstagram.netlify.app/"
       target="_blank"
       class="share__link">
       <i class="fab fa-twitter-square share__icon-social" />
       Compartir en Twitter
     </a>
     <a
-      href="https://api.whatsapp.com/send?&text=Aprendiendo%20a%20crear%20un%20enlace%20para%20compartir%20en%20Whatsapp%20https://devstagram.com/"
+      href="https://api.whatsapp.com/send?&text=Aprendiendo%20a%20crear%20un%20enlace%20para%20compartir%20en%20Whatsapp%20https://devstagram.netlify.app/"
       target="_blank"
       class="share__link">
       <i class="fab fa-whatsapp-square share__icon-social" />
